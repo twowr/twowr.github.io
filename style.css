@@ -1,4 +1,9 @@
-body,html {
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
     margin: 0;
     padding: 0;
 }
@@ -16,4 +21,29 @@ body {
     background-color: #1C1C21;
     height: 100vh;
     width: 60vw;
+}
+
+.focus-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.icon {
+    display: inline-block;
+    flex-basis: 125px;
+    max-width: 125px;
+    max-height: 125px;
+}
+
+.icon.image {
+    flex-basis: 125px;
+    margin: auto;
+}
+
+.icon.text {
+    padding-left: 1.25rem;
+    text-align: center;
 }
