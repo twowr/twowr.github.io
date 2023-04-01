@@ -29,7 +29,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 .icon {
@@ -37,6 +37,7 @@ body {
     flex-basis: 125px;
     max-width: 125px;
     max-height: 125px;
+    padding-left: 20px;
 }
 
 .icon.image {
@@ -53,5 +54,7 @@ body {
 }
 
 .focus-body.text {
+    text-align: left;
     font-size:large;
+    padding-left: 50px;
 }
