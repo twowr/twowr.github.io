@@ -9,8 +9,6 @@ body {
 
 * {
     box-sizing: border-box;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: lighter;
 }
 
 .focus {
@@ -44,6 +42,8 @@ body {
     padding-left: 1.25rem;
     text-align: center;
     color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: lighter;
 }
 
 .focus-body-text {
