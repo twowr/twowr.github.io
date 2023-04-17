@@ -18,7 +18,12 @@
         <div class="focus-body">
             <h1 class="focus-body-text text">i like to write random programs that are useful (i hope)</h1>
             <div class="button-container">
-                <button class="myproject">My Projects</button>
+                <button class="myproject" onclick="goToPage('/page/my_projects/myproject.html')">My Projects</button>
+                <script>
+                    function goToPage(location) {
+                        window.location.href = "https://twowr.github.io" + location;
+                    }
+                </script>
             </div>
         </div>
     </div>
