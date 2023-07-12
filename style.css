@@ -23,6 +23,18 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: left;
+    height: 18vh;
+}
+
+.focus-body {
+    height: 60vh;
+}
+
+.focus-foot {
+    display: flex;
+    height: 18vh;
+    justify-self: end;
+    align-items: center;
 }
 
 .icon {
@@ -35,6 +47,19 @@ body {
 
 .icon.image {
     flex-basis: 125px;
+    margin: auto;
+}
+
+.icon-mini {
+    display: inline-block;
+    flex-basis: 75px;
+    max-width: 75px;
+    max-height: 755px;
+    padding-left: 20px;
+}
+
+.icon-mini.image {
+    flex-basis: 75px;
     margin: auto;
 }
 
