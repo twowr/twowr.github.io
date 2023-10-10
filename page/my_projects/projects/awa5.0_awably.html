@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awably</title>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        span {
+            padding-bottom: 1%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>basically assembly for awa5.0</h1>
+        <span>use shorthand for awatism and binary for parameter</span>
+        <span>awably</span>
+        <textarea rows="5" cols="60" name="awably" placeholder="Awa..." id="awably" spellcheck="false"></textarea>
+        <span>awa5.0</span>
+        <textarea rows="5" cols="60" name="awabyte" placeholder="Awa" id="awabyte" spellcheck="false"></textarea>
+    </div>
+    <script>
+        let awatisms = [
+            "nop", "prn", "pr1", "red", "r3d", "blo", "sbm", "pop", "dpl", "srn", "mrg", "4dd", "sub", "mul", "div", "cnt",
+            "lbl", "jmp", "eql", "lss", "gr8"
+        ]
+
+        let terminate = {"trm": "wawawawawa"}
+
+        document.getElementById("awably").addEventListener("input", () => {
+            let buffer = ""
+            awably = document.getElementById("awably").value.replace(/(\r\n|\n|\r)/gm," ").split(" ")
+            for (i in awably) {
+                let isAwatism = !((awably[i][0] == "0") || (awably[i][0] == "1"))
+                if (isAwatism) {
+                    for (j in awatisms) {
+                        if (awably[i] == awatisms[j]) {
+                            console.log(Number(j).toString(2).padStart(5, '0'))
+                            let binary = Number(j).toString(2).padStart(5, '0')
+                            let awablyText = ""
+                            for (let char of binary) {
+                                if (char == "0") {
+                                    awablyText += " awa"
+                                }
+                                if (char == "1") {
+                                    awablyText += "wa"
+                                }
+                            }
+
+                            buffer += awablyText
+
+                            break
+                        }
+                    }
+                } else {
+                    let awablyText = ""
+                    for (let char of awably[i]) {
+                        if (char == "0") {
+                            awablyText += " awa"
+                        }
+                        if (char == "1") {
+                            awablyText += "wa"
+                        }
+                    }
+
+                    buffer += awablyText
+                }
+            }
+
+            document.getElementById("awabyte").value = "Awa"
+
+            if (buffer[0] != " ") {
+                document.getElementById("awabyte").value += " "
+            }
+
+            document.getElementById("awabyte").value += buffer
+        })
+    </script>
+</body>
+</html>

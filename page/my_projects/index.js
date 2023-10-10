@@ -3,6 +3,11 @@ let projects = {
         name: "Task Reminder",
         date: "17/04/2023",
         description: "a browser extension that remind you a piece of note u wrote after a youtube video finished"
+    },
+    "awably": {
+        name: "Awably",
+        date: "10/10/2023",
+        description: "more readable awa5.0"
     }
 }
 
