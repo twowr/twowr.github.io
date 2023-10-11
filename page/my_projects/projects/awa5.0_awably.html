@@ -36,7 +36,7 @@
             "lbl", "jmp", "eql", "lss", "gr8"
         ]
 
-        let terminate = {"trm": "wawawawawa"}
+        let trm = "wawawawawa"
 
         let awably = document.getElementById("awably")
         let awabyte = document.getElementById("awabyte")
@@ -66,6 +66,8 @@
                             let binary = Number(j).toString(2).padStart(5, '0')
                             buffer += binary.toAwatalk()
                             break
+                        } else if (awablyToken[i] == trm) {
+                            buffer += "wawawawawa"
                         }
                     }
                 } else {
