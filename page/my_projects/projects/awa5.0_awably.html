@@ -8,7 +8,7 @@
             color-scheme: dark;
         }
 
-        .container {
+        .awablyEditor {
             display: flex;
             flex-direction: column;
         }
@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="awablyEditor">
         <h1>basically assembly for awa5.0</h1>
         <span>use shorthand for awatism and binary for parameter</span>
         <span>awably</span>
@@ -27,9 +27,9 @@
         <span>awa5.0</span>
         <textarea rows="5" cols="60" name="awabyte" placeholder="Awa" id="awabyte" spellcheck="false"></textarea>
     </div>
-awa5.0 by Temp-Tempai
-<a style="color: blueviolet" href="https://twitter.com/FlavrTemp">his twitter</a>
-<a style="color: blueviolet" href="https://m.youtube.com/channel/UC8cvnkkLy_crAjCIwZWAC7Q">his youtube</a>
+    awa5.0 by Temp-Tempai
+    <a style="color: blueviolet" href="https://twitter.com/FlavrTemp">his twitter</a>
+    <a style="color: blueviolet" href="https://m.youtube.com/channel/UC8cvnkkLy_crAjCIwZWAC7Q">his youtube</a>
     <script>
         let awatisms = [
             "nop", "prn", "pr1", "red", "r3d", "blo", "sbm", "pop", "dpl", "srn", "mrg", "4dd", "sub", "mul", "div", "cnt",
@@ -38,52 +38,48 @@ awa5.0 by Temp-Tempai
 
         let terminate = {"trm": "wawawawawa"}
 
-        document.getElementById("awably").addEventListener("input", () => {
+        let awably = document.getElementById("awably")
+        let awabyte = document.getElementById("awabyte")
+
+        String.prototype.toAwatalk = function() {
+            let awablyText = ""
+            for (let char of this) {
+                if (char == "0") {
+                    awablyText += " awa"
+                }
+                if (char == "1") {
+                    awablyText += "wa"
+                }
+            }
+            
+            return awablyText
+        }
+        
+        awably.addEventListener("input", () => {
             let buffer = ""
-            awably = document.getElementById("awably").value.replace(/(\r\n|\n|\r)/gm," ").split(" ")
-            for (i in awably) {
-                let isAwatism = !((awably[i][0] == "0") || (awably[i][0] == "1"))
+            awablyToken = awably.value.replace(/(\r\n|\n|\r)/gm," ").split(" ")
+            for (i in awablyToken) {
+                let isAwatism = !((awablyToken[i][0] == "0") || (awablyToken[i][0] == "1"))
                 if (isAwatism) {
                     for (j in awatisms) {
-                        if (awably[i] == awatisms[j]) {
+                        if (awablyToken[i] == awatisms[j]) {
                             let binary = Number(j).toString(2).padStart(5, '0')
-                            let awablyText = ""
-                            for (let char of binary) {
-                                if (char == "0") {
-                                    awablyText += " awa"
-                                }
-                                if (char == "1") {
-                                    awablyText += "wa"
-                                }
-                            }
-
-                            buffer += awablyText
-
+                            buffer += binary.toAwatalk()
                             break
                         }
                     }
                 } else {
-                    let awablyText = ""
-                    for (let char of awably[i]) {
-                        if (char == "0") {
-                            awablyText += " awa"
-                        }
-                        if (char == "1") {
-                            awablyText += "wa"
-                        }
-                    }
-
-                    buffer += awablyText
+                    buffer += awablyToken[i].toAwatalk()
                 }
             }
 
-            document.getElementById("awabyte").value = "Awa"
+            awabyte.value = "Awa"
 
             if (buffer[0] != " ") {
-                document.getElementById("awabyte").value += " "
+                awabyte.value += " "
             }
 
-            document.getElementById("awabyte").value += buffer
+            awabyte.value += buffer
         })
     </script>
 </body>
